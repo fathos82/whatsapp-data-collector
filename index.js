@@ -5,15 +5,12 @@ const assert = require("node:assert");
 const BackupService = require('./BackupService');
 const {join} = require("node:path");
 
-const CHROMIUM_PATH = join(__dirname, 'node_modules', 'whatsapp-web.js', 'node_modules', 'puppeteer-core', '.local-chromium', 'win64-1045629', 'chrome-win', 'chrome.exe');
 
 
 const client = new Client({
 
     authStrategy: new LocalAuth(),
-    puppeteer: {
-        executablePath: CHROMIUM_PATH
-    },
+
     webVersionCache: {
         type: 'remote',
         remotePath: 'https://raw.githubusercontent.com/wppconnect-team/wa-version/main/html/2.2412.54.html',
